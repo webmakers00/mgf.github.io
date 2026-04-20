@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhino二次开发专家 | [YongTang]</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 60px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::after {
+            content: "";
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            height: 100px;
+            background: #f9f9f9;
+            transform: skewY(-3deg);
+            z-index: 1;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            object-fit: cover;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin: 10px 0;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .social-links a:hover {
+            transform: translateY(-3px);
+        }
+        
+        section {
+            padding: 60px 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary);
+        }
+        
+        .section-title h2 {
+            font-size: 2rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .skill-card {
+            background: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .skill-card h3 {
+            color: var(--secondary);
+            margin-top: 0;
+        }
+        
+        .projects {
+            background: var(--light);
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .project-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .project-content {
+            padding: 20px;
+        }
+        
+        .project-content h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: var(--primary);
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+            }
+            
+            .skills-grid, .project-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <!-- 替换为您的头像 -->
+            <img src="profile.jpg" alt="唐永" class="profile-img">
+            <h1>[您的姓名]</h1>
+            <p class="tagline">Rhino 3D/Grasshopper 高级开发工程师 | 参数化设计专家 | 几何算法研究员</p>
+            <div class="social-links">
+                <!-- 替换为您的社交媒体链接 -->
+                <a href="https://github.com/yourusername"  target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/yourprofile"  target="_blank">LinkedIn</a>
+                <a href="mailto:your.email@example.com">Email</a>
+            </div>
+        </div>
+    </header>
+    
+    <section class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>关于我</h2>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <p>我是一名专注于Rhino 3D和Grasshopper二次开发的高级工程师，拥有[X]年的参数化设计和几何算法开发经验。我致力于通过编程扩展Rhino平台的功能边界，为建筑、工程和产品设计领域提供创新的数字化解决方案。</p>
+                <p>我的专长包括RhinoCommon API开发、Grasshopper插件创建、几何算法实现以及性能优化。我热衷于将复杂的几何问题转化为高效的代码实现，帮助设计师和工程师提升工作效率，实现创意构想。</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>专业技能</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Rhino二次开发</h3>
+                    <p>精通RhinoCommon API、RhinoScript和Rhino.Python，能够开发复杂的建模工具和自动化流程。</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Grasshopper插件开发</h3>
+                    <p>熟练使用GH_Component框架创建自定义组件，扩展Grasshopper的功能集。</p>
+                </div>
+                <div class="skill-card">
+                    <h3>几何算法</h3>
+                    <p>深入理解NURBS几何、网格处理和计算几何算法，能够解决复杂的几何问题。</p>
+                </div>
+                <div class="skill-card">
+                    <h3>性能优化</h3>
+                    <p>擅长分析和优化Rhino/Grasshopper脚本的性能，处理大规模几何数据。</p>
+                </div>
+                <div class="skill-card">
+                    <h3>跨平台开发</h3>
+                    <p>熟悉Rhino for Mac和Windows平台的差异，开发兼容性强的解决方案。</p>
+                </div>
+                <div class="skill-card">
+                    <h3>技术栈</h3>
+                    <p>C#, Python, .NET Framework, RhinoCommon, GH_IO, OpenNURBS, 3D图形学基础</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>项目展示</h2>
+            </div>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="project1.jpg" alt="项目1" class="project-img">
+                    <div class="project-content">
+                        <h3>高级曲面展开工具</h3>
+                        <p>开发了一个基于NURBS的复杂曲面展开算法，支持多种展开策略和约束条件，显著提高了产品设计效率。</p>
+                        <a href="#" class="btn">查看详情</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="project2.jpg" alt="项目2" class="project-img">
+                    <div class="project-content">
+                        <h3>结构优化插件</h3>
+                        <p>为Grasshopper开发的拓扑优化插件，集成有限元分析结果，自动生成最优结构形态。</p>
+                        <a href="#" class="btn">查看详情</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="project3.jpg" alt="项目3" class="project-img">
+                    <div class="project-content">
+                        <h3>参数化建筑表皮系统</h3>
+                        <p>定制开发的建筑表皮生成工具，支持多种单元类型和自适应调节，已应用于多个大型建筑项目。</p>
+                        <a href="#" class="btn">查看详情</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>联系我</h2>
+            </div>
+            <div style="text-align: center;">
+                <p>如果您有Rhino二次开发需求或合作机会，欢迎随时联系我。</p>
+                <a href="mailto:your.email@example.com" class="btn" style="margin-top: 20px;">发送邮件</a>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 [您的姓名]. 保留所有权利。</p>
+        </div>
+    </footer>
+</body>
+</html>
